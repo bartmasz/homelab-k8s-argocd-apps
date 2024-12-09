@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myjupyterhub
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: jupyterhub
+    repoURL: https://hub.jupyter.org/helm-chart/
+    targetRevision: 4.0.0
+    # helm:
+    #   valueFiles:
+    #     - config.yaml
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: jupyterhub
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
