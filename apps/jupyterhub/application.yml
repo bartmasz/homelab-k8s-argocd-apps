@@ -50,3 +50,7 @@ spec:
       kind: PersistentVolumeClaim
       jsonPointers: []
       name: "claim-*"
+    - group: ""
+      kind: Pod
+      jsonPointers: []
+      name: "jupyter-*"
