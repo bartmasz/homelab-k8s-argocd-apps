@@ -38,6 +38,9 @@ spec:
     server: "https://kubernetes.default.svc"
     namespace: jupyterhub
   syncPolicy:
+    syncOptions:
+      - CreateNamespace=true # create destination kubernetes namespace
+      - ServerSideApply=true # fix for meta data annotation being too long
     automated:
-      prune: false
-      selfHeal: false
+      selfHeal: true # auto sync and repair
+      prune: true # delete ressources after deletion of this manifest
