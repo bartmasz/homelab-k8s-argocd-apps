@@ -1,21 +1,39 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: myjupyterhub
-#   namespace: argocd
-# spec:
-#   project: default
-#   source:
-#     chart: jupyterhub
-#     repoURL: https://hub.jupyter.org/helm-chart/
-#     targetRevision: 4.0.0
-#     helm:
-#       valueFiles:
-#         - config.yaml
-#   destination:
-#     server: "https://kubernetes.default.svc"
-#     namespace: jupyterhub
-#   syncPolicy:
-#     automated:
-#       prune: true
-#       selfHeal: true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myjupyterhub
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: jupyterhub
+    repoURL: https://hub.jupyter.org/helm-chart/
+    targetRevision: 4.0.0
+    helm:
+      valuesObject:
+        singleuser:
+          storage:
+            capacity: 2Gi
+            dynamic:
+              storageClass: longhorn
+        cull:
+          enabled: true
+          timeout: 180
+          every: 60
+        prePuller:
+          hook:
+            enabled: false
+          continuous:
+            enabled: false
+        ingress:
+          enabled: true
+          ingressClassName: traefik
+          hosts:
+            - jupyterhub.k8s.libator.net
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: jupyterhub
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
