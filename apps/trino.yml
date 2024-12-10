@@ -21,6 +21,7 @@ spec:
                 - path: /
                   pathType: Prefix
           additionalConfigProperties:
+            - http-server.http.forwarded=true
             - http-server.process-forwarded=true
   destination:
     server: "https://kubernetes.default.svc"
