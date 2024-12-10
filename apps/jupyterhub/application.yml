@@ -11,6 +11,9 @@ spec:
     targetRevision: 4.0.0
     helm:
       valuesObject:
+        hub:
+          service:
+            type: LoadBalancer
         singleuser:
           storage:
             capacity: 256Mi
