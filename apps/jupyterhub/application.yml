@@ -9,9 +9,9 @@ spec:
     chart: jupyterhub
     repoURL: https://hub.jupyter.org/helm-chart/
     targetRevision: 4.0.0
-    # helm:
-    #   valueFiles:
-    #     - config.yaml
+    helm:
+      valueFiles:
+        - config.yaml
   destination:
     server: "https://kubernetes.default.svc"
     namespace: jupyterhub

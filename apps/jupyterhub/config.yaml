@@ -8,3 +8,22 @@
 # Chart default values:     https://github.com/jupyterhub/zero-to-jupyterhub-k8s/blob/HEAD/jupyterhub/values.yaml
 # Available chart versions: https://hub.jupyter.org/helm-chart/
 #
+singleuser:
+  storage:
+    capacity: 2Gi
+    dynamic:
+      storageClass: longhorn
+cull:
+  enabled: true
+  timeout: 180
+  every: 60
+prePuller:
+  hook:
+    enabled: false
+  continuous:
+    enabled: false
+ingress:
+  enabled: true
+  ingressClassName: traefik
+  hosts:
+    - jupyterhub.k8s.libator.net
