@@ -41,16 +41,6 @@ spec:
     syncOptions:
       - CreateNamespace=true
       - ServerSideApply=true
-      - RespectIgnoreDifferences=true
     automated:
       selfHeal: true
       prune: false
-  ignoreDifferences:
-    - group: ""
-      kind: PersistentVolumeClaim
-      jsonPointers: []
-      name: "claim-*"
-    - group: ""
-      kind: Pod
-      jsonPointers: []
-      name: "jupyter-*"
