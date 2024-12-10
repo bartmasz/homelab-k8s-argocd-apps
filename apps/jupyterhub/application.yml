@@ -29,7 +29,7 @@ spec:
           enabled: true
           ingressClassName: traefik
           hosts:
-            - jupyterhub.k8s.libator.net
+            - jupyterhub2.k8s.libator.net
         scheduling:
           userScheduler:
             enabled: true
