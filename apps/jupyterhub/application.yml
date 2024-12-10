@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: myjupyterhub
+  name: jupyterhub
   namespace: argocd
 spec:
   project: default
@@ -10,7 +10,7 @@ spec:
     repoURL: https://hub.jupyter.org/helm-chart/
     targetRevision: 4.0.0
     helm:
-      values: |
+      valuesObject:
         singleuser:
           storage:
             capacity: 1Gi
