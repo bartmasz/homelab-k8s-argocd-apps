@@ -13,7 +13,7 @@ spec:
       valuesObject:
         ingress:
           enabled: true
-          ingressClassName: traefik
+          className: traefik
           hosts:
             - trino.k8s.libator.net
   destination:
