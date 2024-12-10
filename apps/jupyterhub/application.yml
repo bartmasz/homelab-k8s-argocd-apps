@@ -12,6 +12,8 @@ spec:
     helm:
       valuesObject:
         singleuser:
+          extraAnnotations:
+            argocd.argoproj.io/sync-options: Prune=false,Delete=false
           storage:
             capacity: 256Mi
             dynamic:
@@ -39,8 +41,8 @@ spec:
     namespace: jupyterhub
   syncPolicy:
     syncOptions:
-      - CreateNamespace=true # create destination kubernetes namespace
-      - ServerSideApply=true # fix for meta data annotation being too long
+      - CreateNamespace=true
+      - ServerSideApply=true
     automated:
-      selfHeal: true # auto sync and repair
-      prune: false # delete ressources after deletion of this manifest
+      selfHeal: true
+      prune: true
