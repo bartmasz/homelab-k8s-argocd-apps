@@ -47,10 +47,7 @@ spec:
       prune: false
   ignoreDifferences:
     - group: ""
-      kind: Pod
-      jsonPointers:
-        - /metadata/labels/hub.jupyter.org/created-by
-    - group: ""
       kind: PersistentVolumeClaim
       jsonPointers:
-        - /metadata/labels/hub.jupyter.org/created-by
+        - /metadata/labels/app.kubernetes.io/managed-by
+      jmesPath: "[?app.kubernetes.io/managed-by=='kubespawner']"
