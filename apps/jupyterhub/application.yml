@@ -13,7 +13,7 @@ spec:
       valuesObject:
         singleuser:
           storage:
-            capacity: 1Gi
+            capacity: 256Mi
             dynamic:
               storageClass: longhorn
         cull:
@@ -22,9 +22,9 @@ spec:
           every: 60
         prePuller:
           hook:
-            enabled: true
+            enabled: false
           continuous:
-            enabled: true
+            enabled: false
         ingress:
           enabled: true
           ingressClassName: traefik
