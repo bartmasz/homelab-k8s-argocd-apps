@@ -22,7 +22,10 @@ spec:
                   pathType: Prefix
         additionalConfigProperties:
           - http-server.process-forwarded=true
-        connectors:
+        catalogs:
+          memory: |-
+            connector.name=memory
+            memory.max-data-per-node=128MB
           iceberg.properties: |-
             connector.name=iceberg
             iceberg.catalog.type=glue
