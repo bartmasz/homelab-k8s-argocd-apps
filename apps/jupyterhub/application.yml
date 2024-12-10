@@ -22,9 +22,9 @@ spec:
           every: 60
         prePuller:
           hook:
-            enabled: false
+            enabled: true
           continuous:
-            enabled: false
+            enabled: true
         ingress:
           enabled: true
           ingressClassName: traefik
