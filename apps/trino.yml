@@ -19,6 +19,8 @@ spec:
               paths:
                 - path: /
                   pathType: Prefix
+          additionalConfigProperties:
+            - http-server.process-forwarded=true
   destination:
     server: "https://kubernetes.default.svc"
     namespace: trino
