@@ -13,7 +13,7 @@ spec:
       values: |
         singleuser:
           storage:
-            capacity: 2Gi
+            capacity: 1Gi
             dynamic:
               storageClass: longhorn
         cull:
@@ -29,7 +29,7 @@ spec:
           enabled: true
           ingressClassName: traefik
           hosts:
-            - jupyterhub2.k8s.libator.net
+            - jupyterhub.k8s.libator.net
         scheduling:
           userScheduler:
             enabled: true
