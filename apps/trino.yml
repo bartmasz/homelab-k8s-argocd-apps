@@ -22,6 +22,19 @@ spec:
                   pathType: Prefix
         additionalConfigProperties:
           - http-server.process-forwarded=true
+        connectors:
+          iceberg.properties: |-
+            connector.name=iceberg
+            iceberg.catalog.type=glue
+            iceberg.file-format=parquet
+            iceberg.compression-codec=snappy
+            iceberg.unique-table-location=true
+            iceberg.max-partitions-per-writer=10
+            iceberg.projection-pushdown-enabled=true
+            fs.native-s3.enabled=true
+            fs.cache.enabled=true
+            fs.cache.directories=/cache/iceberg
+            fs.cache.max-disk-usage-percentages=90
   destination:
     server: "https://kubernetes.default.svc"
     namespace: trino
