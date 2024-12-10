@@ -43,4 +43,4 @@ spec:
       - ServerSideApply=true # fix for meta data annotation being too long
     automated:
       selfHeal: true # auto sync and repair
-      prune: true # delete ressources after deletion of this manifest
+      prune: false # delete ressources after deletion of this manifest
