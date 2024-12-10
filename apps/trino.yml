@@ -18,6 +18,7 @@ spec:
             - host: trino.k8s.libator.net
               paths:
                 - path: /
+                  pathType: ImplementationSpecific
   destination:
     server: "https://kubernetes.default.svc"
     namespace: trino
