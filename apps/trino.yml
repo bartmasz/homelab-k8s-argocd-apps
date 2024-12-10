@@ -14,7 +14,7 @@ spec:
         ingress:
           enabled: true
           className: traefik
-          traefik.ingress.kubernetes.io/router.middlewares: x-forwarded-proto-https
+          traefik.ingress.kubernetes.io/router.middlewares: traefik-x-forwarded-proto-https@kubernetescrd
           hosts:
             - host: trino.k8s.libator.net
               paths:
