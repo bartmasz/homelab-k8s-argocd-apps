@@ -12,8 +12,6 @@ spec:
     helm:
       valuesObject:
         singleuser:
-          extraAnnotations:
-            argocd.argoproj.io/ignore-resource-updates: "true"
           storage:
             capacity: 256Mi
             dynamic:
