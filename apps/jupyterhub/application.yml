@@ -48,6 +48,5 @@ spec:
   ignoreDifferences:
     - group: ""
       kind: PersistentVolumeClaim
-      labelSelector:
-        matchLabels:
-          app.kubernetes.io/managed-by: kubespawner
+      jsonPointers: []
+      name: "claim-*"
