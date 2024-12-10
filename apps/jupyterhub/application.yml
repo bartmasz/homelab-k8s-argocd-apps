@@ -39,5 +39,5 @@ spec:
     namespace: jupyterhub
   syncPolicy:
     automated:
-      prune: true
-      selfHeal: true
+      prune: false
+      selfHeal: false
