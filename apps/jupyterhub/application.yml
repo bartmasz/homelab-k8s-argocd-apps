@@ -10,7 +10,7 @@ spec:
     repoURL: https://hub.jupyter.org/helm-chart/
     targetRevision: 4.0.0
     helm:
-      valuesObject:
+      values: |
         singleuser:
           storage:
             capacity: 2Gi
