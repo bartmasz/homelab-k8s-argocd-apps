@@ -48,6 +48,6 @@ spec:
   ignoreDifferences:
     - group: ""
       kind: PersistentVolumeClaim
-      jsonPointers:
-        - /metadata/labels/app.kubernetes.io/managed-by
-      jmesPath: "[?app.kubernetes.io/managed-by=='kubespawner']"
+      labelSelector:
+        matchLabels:
+          app.kubernetes.io/managed-by: kubespawner
