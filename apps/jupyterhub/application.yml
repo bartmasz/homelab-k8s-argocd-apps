@@ -30,6 +30,10 @@ spec:
           ingressClassName: traefik
           hosts:
             - jupyterhub.k8s.libator.net
+        scheduling:
+          userScheduler:
+            enabled: true
+            replicas: 1
   destination:
     server: "https://kubernetes.default.svc"
     namespace: jupyterhub
