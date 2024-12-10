@@ -16,6 +16,8 @@ spec:
           className: traefik
           hosts:
             - host: trino.k8s.libator.net
+              paths:
+                - path: /
   destination:
     server: "https://kubernetes.default.svc"
     namespace: trino
