@@ -33,7 +33,7 @@ spec:
         scheduling:
           userScheduler:
             enabled: true
-            replicas: 1
+            replicas: 3
   destination:
     server: "https://kubernetes.default.svc"
     namespace: jupyterhub
