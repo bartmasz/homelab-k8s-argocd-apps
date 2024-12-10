@@ -6,12 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    chart: trino/trino
+    chart: trino
     repoURL: https://trinodb.github.io/charts
     targetRevision: 1.35.0
-    helm:
-      valuesObject:
-
   destination:
     server: "https://kubernetes.default.svc"
     namespace: trino
