@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: trino
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: jupyterhub
+    repoURL: https://trinodb.github.io/charts
+    targetRevision: 1.35.0
+    helm:
+      valuesObject:
+
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: trino
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
+    automated:
+      selfHeal: true
+      prune: true
