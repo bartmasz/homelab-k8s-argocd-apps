@@ -13,8 +13,8 @@ spec:
       valuesObject:
         singleuser:
           extraAnnotations:
-            argocd.argoproj.io/sync-options: Prune=false,Delete=false
-            argocd.argoproj.io/compare-options: IgnoreExtraneous
+            annotations:
+              argocd.argoproj.io/ignore-resource-updates: "true"
           storage:
             capacity: 256Mi
             dynamic:
@@ -44,6 +44,16 @@ spec:
     syncOptions:
       - CreateNamespace=true
       - ServerSideApply=true
+      - RespectIgnoreDifferences=true
     automated:
       selfHeal: true
-      prune: false
+      prune: true
+  ignoreDifferences:
+    - group: ""
+      kind: Pod
+      jsonPointers:
+        - /metadata/labels/hub.jupyter.org/created-by
+    - group: ""
+      kind: PersistentVolumeClaim
+      jsonPointers:
+        - /metadata/labels/hub.jupyter.org/created-by
