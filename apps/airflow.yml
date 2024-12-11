@@ -31,7 +31,7 @@ spec:
             enabled: true
             ingressClassName: traefik
             hosts:
-              - airflow.k8s.libator.net
+              - name: airflow.k8s.libator.net
             pathType: Prefix
         useStandardNaming: true
         createUserJob:
