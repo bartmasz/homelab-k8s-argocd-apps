@@ -22,8 +22,10 @@ spec:
             size: 100Mi
         logs:
           persistence:
+            enabled: false
             size: 100Mi
         redis:
+          enabled: false
           persistence:
             size: 100Mi
         ingress:
