@@ -14,7 +14,7 @@ spec:
         workers:
           persistence:
             size: 100Mi
-        trigger:
+        triggerer:
           persistence:
             size: 100Mi
         dags:
