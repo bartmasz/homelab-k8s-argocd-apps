@@ -11,6 +11,28 @@ spec:
     targetRevision: 1.15.0
     helm:
       valuesObject:
+        workers:
+          persistence:
+            size: 100Mi
+        trigger:
+          persistence:
+            size: 100Mi
+        dags:
+          persistence:
+            size: 100Mi
+        logs:
+          persistence:
+            size: 100Mi
+        redis:
+          persistence:
+            size: 100Mi
+        ingress:
+          web:
+            enabled: true
+            ingressClassName: traefik
+            hosts:
+              - host: airflow.k8s.libator.net
+            pathType: Prefix
         useStandardNaming: true
         createUserJob:
           useHelmHooks: false
